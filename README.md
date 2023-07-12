@@ -21,3 +21,10 @@ Configurations:
 
 
 Don't hard code credentials in Terrfarom configuration, use environment variables
+
+Make sure your terminal is in the same location as youre terraform file
+
+        terraform init #terraform will download appropriate plugins associated to new provider
+        terraform plan #displays what terraform is planning on creating
+        terraform apply #creates the resources 
+        
