@@ -35,4 +35,12 @@ When we run terraform init, plugins requred for the provider are automatically d
 
 Terraform support multiple providers 
 
-Resource block describes one or more infrastructue objects 
+
+Resource block describes one or more infrastructure objects 
+
+            resource aws_instance
+            resource aws_alb
+            resource iam_user
+            resource digitialocean_droplet
+
+
