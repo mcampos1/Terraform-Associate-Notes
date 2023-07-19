@@ -43,4 +43,16 @@ Resource block describes one or more infrastructure objects
             resource iam_user
             resource digitialocean_droplet
 
+Resource type and Name together server as an identifier for a given resouce and so must be unique
+
+            resource "aws_instance" "myec2"{
+                ami = "ami-081343241321324"
+                instance_type = "t2.micro"
+            }
+
+            resource "aws_instance" "web"{
+                ami = "ami-081343241321324"
+                instance_type = "t2.micro"
+            }
+
 
