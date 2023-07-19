@@ -27,4 +27,10 @@ Make sure your terminal is in the same location as youre terraform file
         terraform init #terraform will download appropriate plugins associated to new provider
         terraform plan #displays what terraform is planning on creating
         terraform apply #creates the resources 
-        
+
+Provider Plugings
+A provider is a plugin that lets Terraform manage an external API
+
+When we run terraform init, plugins requred for the provider are automatically downloaded and saved locally to a .terraform directory 
+
+Terraform support multiple providers 
