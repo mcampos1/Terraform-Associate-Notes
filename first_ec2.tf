@@ -11,3 +11,6 @@ resource "aws_instance" "myec2" {
   tags = {
       Name = "first ec2"
   }
+
+provider azurerm {}
+#this is enough for terraform to download the appriopriate plugins with terraform init
