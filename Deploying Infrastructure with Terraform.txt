@@ -34,3 +34,5 @@ A provider is a plugin that lets Terraform manage an external API
 When we run terraform init, plugins requred for the provider are automatically downloaded and saved locally to a .terraform directory 
 
 Terraform support multiple providers 
+
+Resource block describes one or more infrastructue objects 
