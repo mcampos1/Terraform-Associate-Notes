@@ -127,7 +127,7 @@ provider plugins are released separately from Terraform itself
 They have different set of version numbers
 
 During terraform init, if version arguement is not specified, the most recent provider will be downloaded during initialization.  
-for production use, you should constrain the acceptable provider versions via configuration, to ensure that new versions with breaking chagnes will not be autmatiaclly installed  
+for production use, you should constrain the acceptable provider versions via configuration, to ensure that new versions with breaking changes will not be automatically installed  
 
 
         terraform {
@@ -138,6 +138,11 @@ for production use, you should constrain the acceptable provider versions via co
         }
       }
 
+**Arguements for Specifying version of a Provider**
+* >=1.0          greater than eqaul to the version
+* <=1.0          less than or equal to the version
+* ~>2.0          any version in the 2.X range
+* >=2.10,<=2.30 any version between 2.10 and 2.30
 
 
 
