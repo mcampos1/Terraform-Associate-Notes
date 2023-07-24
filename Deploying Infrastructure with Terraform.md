@@ -55,6 +55,8 @@ Resource type and Name together server as an identifier for a given resouce and 
                 instance_type = "t2.micro"
             }
 Destroy resouces when you no longer need them to save on costs
+-target flag combination of resource type and local resource name 
+-taget aws_instance.myec2
         
         terraform destroy #destroys all resources
         terraform destroy -target aws_instance.myec2 #only destroy specified resource
