@@ -138,7 +138,7 @@ for production use, you should constrain the acceptable provider versions via co
         }
       }
 
-**Arguements for Specifying version of a Provider**
+**Arguments for Specifying version of a Provider**
 * >=1.0          greater than eqaul to the version
 * <=1.0          less than or equal to the version
 * ~>2.0          any version in the 2.X range
