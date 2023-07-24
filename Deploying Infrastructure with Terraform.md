@@ -1,4 +1,4 @@
-Authentication and Authorization:
+**Authentication and Authorization:**
     Authentication: process of verifying who a user is
     Authorization: process of verifying what they have access to
     Identity Access Management  
@@ -22,7 +22,7 @@ Configurations:
   Operating System
 
 
-Don't hard code credentials in Terrfarom configuration, use environment variables
+**Don't hard code credentials in Terrfarom configuration, use environment variables**
 
 Make sure your terminal is in the same location as youre terraform file
 
@@ -30,7 +30,7 @@ Make sure your terminal is in the same location as youre terraform file
         terraform plan #displays what terraform is planning on creating
         terraform apply #creates the resources 
 
-Provider Plugings  
+**Provider Plugings**  
 
 A provider is a plugin that lets Terraform manage an external API
 
@@ -70,15 +70,21 @@ As long as code to create resource is still present in the terraform file, it wi
 
 Multiple ways to destory resources:
 
-commenting out resource code from terraform file and then terraform plan, terraform apply
-deleting resource code from terraform file and then terraform plan, terraform apply
-terraform destroy 
+commenting out resource code from terraform file and then terraform plan, terraform apply  
+
+deleting resource code from terraform file and then terraform plan, terraform apply  
+
+terraform destroy   
 
 
 
-Terraform State File: located in the same directory as terraform on local machine: terraform.tfstate
-terraform stores the state of the infrastructure that is being created from the TF files
-This state allows terraform to map real world resource to your existing configuration
+
+**Terraform State File:** located in the same directory as terraform on local machine: terraform.tfstate  
+
+terraform stores the state of the infrastructure that is being created from the TF files  
+
+This state allows terraform to map real world resource to your existing configuration  
+
 stores resource configuration and settings in the Terraform State file
 
 example:
@@ -87,7 +93,8 @@ myec2 ====> instance-id, instance-type, security group, private-ip, volume-type,
 avoid making changes to terraform.tfstate and make a backup of statefile 
 
 
-Understand Desired vs Current State 
+**Understand Desired vs Current State**  
+
 Desired State:
 terraforms primary function is to create, modify, and destroy infrastructure resources to match the desired state described in a Terraform Configuration.
 configurations specified in Terraform file
