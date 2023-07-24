@@ -59,22 +59,26 @@ Resource type and Name together server as an identifier for a given resouce and 
             }
 
             
-Destroy resouces when you no longer need them to save on costs
--target flag combination of resource type and local resource name 
--taget aws_instance.myec2
+**Terraform Destory ** 
+
+Destroy resouces when you no longer need them to save on costs  
+
+-target flag combination of resource type and local resource name   
+
+-target aws_instance.myec2
         
         terraform destroy #destroys all resources
         terraform destroy -target aws_instance.myec2 #only destroy specified resource
 
 As long as code to create resource is still present in the terraform file, it will recreate the resource.
 
-Multiple ways to destory resources:
+**Multiple ways to destory resources:**
 
-commenting out resource code from terraform file and then terraform plan, terraform apply  
+* commenting out resource code from terraform file and then terraform plan, terraform apply  
 
-deleting resource code from terraform file and then terraform plan, terraform apply  
+* deleting resource code from terraform file and then terraform plan, terraform apply  
 
-terraform destroy   
+* terraform destroy   
 
 
 
