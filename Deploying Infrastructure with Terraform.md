@@ -138,11 +138,24 @@ for production use, you should constrain the acceptable provider versions via co
         }
       }
 
-**Arguments for Specifying version of a Provider**
+**Arguments for Specifying version of a Provider** 
 * ">=1.0"          greater than eqaul to the version
 * "<=1.0"          less than or equal to the version
 * "~>2.0"          any version in the 2.X range
 * ">=2.10,<=2.30" any version between 2.10 and 2.30
+
+Can be used to set up constraints to block changes that dont follow the constraints
+
+**Dependency Lock File**
+.terraform.lock.hcl are maintained automatically by terraform init  
+Terraform dependency lock file allows us to lock to a specific version of the provider  
+If a particular provider already has a selection recorded in the lock file, Terraform will always re-select that version for installation, even if a newer version has become available  
+You can override that behavior by adding the -upgrade option when you run terraform init  
+lock file will set up contraints that will block changes that are outside the constraints  
+Almost like a cache that stores configurations when running terraform init     
+            terraform init -upgrade 
+
+
 
 
 
