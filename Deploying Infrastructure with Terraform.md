@@ -65,11 +65,32 @@ Destroy resouces when you no longer need them to save on costs
 
 As long as code to create resource is still present in the terraform file, it will recreate the resource.
 
-Multiple ways to destory resources
+Multiple ways to destory resources:
 
-commenting out resoruce code from terraform file and then terraform plan, terraform apply
+commenting out resource code from terraform file and then terraform plan, terraform apply
 deleting resource code from terraform file and then terraform plan, terraform apply
 terraform destroy 
+
+
+
+Terraform State File:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
