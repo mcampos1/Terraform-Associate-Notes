@@ -157,12 +157,15 @@ Almost like a cache that stores configurations when running terraform init
 
     terraform init -upgrade 
 
-**Terraform Refresh**
+**Terraform Refresh (deprecated)**
 The terraform refresh command will check the latest staet of your infrastructure and update the state file accordingly
 
     terraform apply -auto-approve  #creates the resource quickly
 
+automatically ran with terraform plan and doesn't modify statefile
 
+careful when running terraform refresh manually, changing regions of instance, will make terraform think that the instance doesn't exist  
+terraform refresh will wipe out the configurations set up in the state file
 
 
 
