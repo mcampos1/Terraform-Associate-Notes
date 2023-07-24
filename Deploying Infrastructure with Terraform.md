@@ -118,6 +118,16 @@ example update security group in myec2 to custom instead of default
 
 no error was returned because the security group configuration was not included in the resource block in the TF file
 
+**Terraform Provider Versioning:**  
+Provider architecture:   
+terraform file ==> Terraform ==> AWS ==> Server
+                    
+provider plugins are released separately from Terraform itself  
+
+They have different set of version numbers
+
+During terraform init, if version arguement is not specified, the most recent provider will be downloaded during initialization.  
+for production use, you should constrain the acceptable provider versions via configuration, to ensure that new versions with breaking chagnes will not be autmatiaclly installed  
 
 
 
