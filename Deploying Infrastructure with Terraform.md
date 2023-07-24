@@ -130,7 +130,13 @@ During terraform init, if version arguement is not specified, the most recent pr
 for production use, you should constrain the acceptable provider versions via configuration, to ensure that new versions with breaking chagnes will not be autmatiaclly installed  
 
 
-
+        terraform {
+          required_providers {
+            github = {
+              source  = "integrations/github"
+              version = "~> 5.0"
+        }
+      }
 
 
 
