@@ -153,7 +153,9 @@ If a particular provider already has a selection recorded in the lock file, Terr
 You can override that behavior by adding the -upgrade option when you run terraform init  
 lock file will set up contraints that will block changes that are outside the constraints  
 Almost like a cache that stores configurations when running terraform init     
-            terraform init -upgrade 
+
+
+    terraform init -upgrade 
 
 
 
