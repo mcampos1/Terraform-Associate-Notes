@@ -73,12 +73,36 @@ terraform destroy
 
 
 
-Terraform State File:
+Terraform State File: located in the same directory as terraform on local machine: terraform.tfstate
+terraform stores the state of the infrastructure that is being created from the TF files
+This state allows terraform to map real world resource to your existing configuration
+stores resource configuration and settings in the Terraform State file
+
+example:
+myec2 ====> instance-id, instance-type, security group, private-ip, volume-type, volume-size, public-ip
+
+avoid making changes to terraform.tfstate and make a backup of statefile 
 
 
+Understand Desired vs Current State 
+Desired State:
+terraforms primary function is to create, modify, and destroy infrastructure resources to match the desired state described in a Terraform Configuration.
+configurations specified in Terraform file
 
+Current State is the actual state of a resource that is currently deployed
+example: you manually change state or type of ec2 instance without updating terraform file (desired state)
 
+Terraform tried to ensure that the deployed infrastructure is based on the desired state.
+If there is a difference between the two, terraform plan presents a description of the changes necessary to achieve the desired state
 
+Desired State is priortized over current
+
+example update security group in myec2 to custom instead of default
+
+        terraform refresh #updates tf state file with custom
+        terraform plan #returns no error
+
+no error was returned because the security group configuration was not included in the resource block in the TF file
 
 
 
