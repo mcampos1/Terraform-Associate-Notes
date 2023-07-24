@@ -139,10 +139,10 @@ for production use, you should constrain the acceptable provider versions via co
       }
 
 **Arguments for Specifying version of a Provider**
-* >=1.0          greater than eqaul to the version
-* <=1.0          less than or equal to the version
-* ~>2.0          any version in the 2.X range
-* >=2.10,<=2.30 any version between 2.10 and 2.30
+* ">=1.0"          greater than eqaul to the version
+* "<=1.0"          less than or equal to the version
+* "~>2.0"          any version in the 2.X range
+* ">=2.10,<=2.30" any version between 2.10 and 2.30
 
 
 
