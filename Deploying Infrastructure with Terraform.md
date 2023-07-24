@@ -113,8 +113,8 @@ Desired State is priortized over current
 
 example update security group in myec2 to custom instead of default
 
-        terraform refresh #updates tf state file with custom
-        terraform plan #returns no error
+    terraform refresh #updates tf state file with custom
+    terraform plan #returns no error
 
 no error was returned because the security group configuration was not included in the resource block in the TF file
 
@@ -156,6 +156,12 @@ Almost like a cache that stores configurations when running terraform init
 
 
     terraform init -upgrade 
+
+**Terraform Refresh**
+The terraform refresh command will check the latest staet of your infrastructure and update the state file accordingly
+
+    terraform apply -auto-approve  #creates the resource quickly
+
 
 
 
