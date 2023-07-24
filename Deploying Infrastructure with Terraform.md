@@ -54,6 +54,8 @@ Resource type and Name together server as an identifier for a given resouce and 
                 ami = "ami-081343241321324"
                 instance_type = "t2.micro"
             }
+
+            
 Destroy resouces when you no longer need them to save on costs
 -target flag combination of resource type and local resource name 
 -taget aws_instance.myec2
