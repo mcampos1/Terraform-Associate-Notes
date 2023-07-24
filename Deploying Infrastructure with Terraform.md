@@ -1,8 +1,10 @@
 Authentication and Authorization:
     Authentication: process of verifying who a user is
     Authorization: process of verifying what they have access to
-    Identity Access Management 
-  Terraform needs access credentials with relevant permissions to create and manage the environments
+    Identity Access Management  
+    
+  Terraform needs access credentials with relevant permissions to create and manage the environments  
+  
   Access Credentials:
     AWS, access keys and secret keys
     GitHub, tokens
@@ -28,7 +30,8 @@ Make sure your terminal is in the same location as youre terraform file
         terraform plan #displays what terraform is planning on creating
         terraform apply #creates the resources 
 
-Provider Plugings
+Provider Plugings  
+
 A provider is a plugin that lets Terraform manage an external API
 
 When we run terraform init, plugins requred for the provider are automatically downloaded and saved locally to a .terraform directory 
