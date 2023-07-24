@@ -64,7 +64,14 @@ Destroy resouces when you no longer need them to save on costs
         terraform destroy -target aws_instance.myec2 #only destroy specified resource
 
 As long as code to create resource is still present in the terraform file, it will recreate the resource.
-Destroy resource and remove or comment out resource code in the terraform file
+
+Multiple ways to destory resources
+
+    commenting out resoruce code from terraform file and then terraform plan, terraform apply
+    deleting resource code from terraform file and then terraform plan, terraform apply
+    terraform destroy 
+    
+
 
 
 
