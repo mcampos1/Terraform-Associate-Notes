@@ -54,6 +54,29 @@ Resource type and Name together server as an identifier for a given resouce and 
                 ami = "ami-081343241321324"
                 instance_type = "t2.micro"
             }
+destroy resouces when you no longer need them to save on costs
+        
+        terraform destroy #destroys all resources
+        terraform destroy -target ec2 #only destroy specified resource
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
