@@ -9,7 +9,7 @@ terraform {
 
 #authentication
 provider "github" {
-  token = "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"
+  token = "............."
 }
 
 #create resource= repository
