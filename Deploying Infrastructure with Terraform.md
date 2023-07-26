@@ -167,6 +167,8 @@ automatically ran with terraform plan and doesn't modify statefile
 careful when running terraform refresh manually, changing regions of instance, will make terraform think that the instance doesn't exist  
 terraform refresh will wipe out the configurations set up in the state file
 
+**AWS provider Authentication Configuration**
+
 
 
 
