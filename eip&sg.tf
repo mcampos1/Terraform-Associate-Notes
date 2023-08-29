@@ -15,4 +15,4 @@ resource "aws_security_group" "allow_tls" {
     from_port        = "443"
     to_port          = "443"
     protocol         = "tcp"
-    cidr_blocks      = [aws_eip.lb.public_ip]
+    cidr_blocks      = [${aws_eip.myeip.public_ip}/32]
