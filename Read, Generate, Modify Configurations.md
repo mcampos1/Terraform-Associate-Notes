@@ -12,3 +12,27 @@ example: elastic ip, attibute public_ip= 57.72.52.72
 security group, cidr_blocks= [${aws_eip.myeip.public_ip}/32]
 
 running terraform plan the resource that will fetch the specifc attribute of another resource will say "(known after apply)"
+
+**Output Values**
+Output values make information about your infratructure available on the command line, and can expose information for other Terraform configurations to use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
