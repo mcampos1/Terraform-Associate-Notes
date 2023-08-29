@@ -9,4 +9,6 @@ Example: EC2 has arn, instance_state, private_dns ....
 
 Terraform allows us to reference the attribute of one resouce to be used in a different resource
 example: elastic ip, attibute public_ip= 57.72.52.72 
-security group, cidr_blocks= [aws_eip.myeip.public_ip]
+security group, cidr_blocks= [${aws_eip.myeip.public_ip}/32]
+
+running terraform plan the resource that will fetch the specifc attribute of another resource will say "(known after apply)"
