@@ -83,7 +83,8 @@ As long as code to create resource is still present in the terraform file, it wi
 
 
 
-**Terraform State File:** located in the same directory as terraform on local machine: terraform.tfstate  
+**Terraform State File:** located in the same directory as terraform on local machine 
+**terraform.tfstate**
 
 terraform stores the state of the infrastructure that is being created from the TF files  
 
@@ -161,6 +162,7 @@ Almost like a cache that stores configurations when running terraform init
 The terraform refresh command will check the latest staet of your infrastructure and update the state file accordingly
 
     terraform apply -auto-approve  #creates the resource quickly
+    terraform destroy -auto-approve
 
 automatically ran with terraform plan and doesn't modify statefile
 
@@ -168,9 +170,33 @@ careful when running terraform refresh manually, changing regions of instance, w
 terraform refresh will wipe out the configurations set up in the state file
 
 **AWS provider Authentication Configuration**
-Dont hardcode authenticaiton credentials into Terrafrom scripts.
+Dont hardcode authenticaiton credentials into Terrafrom scripts. 
 
-Better approach is shared cconfiguration/credential files 
+Better approach is shared configuration/credential files, although still requires alot of maintenance. 
+If shared files lines are not added to provider block, by default Terraform will locate these files at 
+$HOME/.aws/config and $HOME/.aws/credentials on Linux and macOS
+
+Best approach is to use AWS CLI to store credentials
+Install AWS CLI, credentials to authenticate to AWS are stored in the same directory where Terraform searches for credentials:$HOME/.aws/config and $HOME/.aws/credentials 
+
+Adding AWS credentials with AWS CLI 
+once AWS CLI is installed: 
+
+    aws configure
+
+add access and secret keys which will be stored at: 
+Linux: $HOME/.aws/config and $HOME/.aws/credentials 
+Windows: C:\Users\name\.aws\credentials     
+
+Can also use environmental variables for credentials: 
+
+    export AWS_ACCESS_KEY_ID="anaccesskey"
+    export AWS_SECRET_ACCESS_KEY="asecretkey"
+    export AWS_REGION="us-west-2
+
+
+
+
 
 
 
