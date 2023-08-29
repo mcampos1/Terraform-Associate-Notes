@@ -14,7 +14,12 @@ security group, cidr_blocks= [${aws_eip.myeip.public_ip}/32]
 running terraform plan the resource that will fetch the specifc attribute of another resource will say "(known after apply)"
 
 **Output Values**
-Output values make information about your infratructure available on the command line, and can expose information for other Terraform configurations to use.
+Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use. 
+Output values defined in Project A can be referenced from code in Project B as well. Even if they are in different Github repositories
+Project B can fetch the output values from the state file of Project A
+
+**Terraform Variables**
+can create a central source from which we can import the values from. Variables.tf
 
 
 
