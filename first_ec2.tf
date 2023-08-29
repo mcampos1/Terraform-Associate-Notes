@@ -25,3 +25,15 @@ resource "aws_instance" "myec2" {
 
 provider azurerm {}
 #this is enough for terraform to download the appriopriate plugins with terraform init
+
+##shared coonfig files 
+provider "aws" {
+  shared_config_files        = ["/Users/tf_user/.aws/conf"]
+  shared_credentials_files   = ["/Users/tf_user/.aws/creds"]
+  profile                    = "customprofile"
+}
+
+resource "aws_eip" "lb" {
+  domain      = "vpc"
+}
+
