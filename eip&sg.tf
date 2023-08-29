@@ -6,9 +6,11 @@ resource "aws_eip" "lb" {
   domain = "vpc"
   }
 
-#output values
+#outputs the value of the attibute to the console after running Terraform apply
 output "public-ip" {
-  value = aws_eip.lb.public_ip
+  #value = aws_eip.lb.public_ip #outputs the public_ip attribute of that resource
+  value = "https://${aws_eip.lb.public_ip}:8080" #outputs the FQDN
+  value = aws_eip.lb #outputs all the attributes of that resource
 }
 
 resource "aws_security_group" "allow_tls" {
