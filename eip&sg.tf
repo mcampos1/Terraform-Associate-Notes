@@ -6,6 +6,11 @@ resource "aws_eip" "lb" {
   domain = "vpc"
   }
 
+#output values
+output "public-ip" {
+  value = aws_eip.lb.public_ip
+}
+
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
