@@ -168,7 +168,9 @@ careful when running terraform refresh manually, changing regions of instance, w
 terraform refresh will wipe out the configurations set up in the state file
 
 **AWS provider Authentication Configuration**
+Dont hardcode authenticaiton credentials into Terrafrom scripts.
 
+Better approach is shared cconfiguration/credential files 
 
 
 
