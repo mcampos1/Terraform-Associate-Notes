@@ -1,4 +1,7 @@
-variable "usernumber" {}
+#only number values will be accepted for the variable
+variable "usernumber" {
+  type = number
+}
 
 variable "vpn_ip" {
   default = "116.50.30.20/32"
