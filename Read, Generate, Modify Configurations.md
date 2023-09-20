@@ -128,6 +128,22 @@ for list reference the variable and position number of the value you want
           default = ["m5.large","m5.xlarge","t2.medium"]
         }
 
+**Overview of Count Parameter**
+
+The count parameter on resources can simplify configurations and let you scale resources by simply incrementing a number.
+
+lets assume, you need to create two EC2 instances. One of the common approach is to define two separate resource blocks for aws_instance. This will make code longer.
+
+With count parameter, we can simplify specify the count value and the resource can be scaled accordingly
+
+        resource "aws_instance" "instance-1"{
+          ami = "ami-1358923841f"
+          instance_type = "t2.micro"
+          count = 5 #creates 5 instances
+          }
+  
+
+
 
 
 
