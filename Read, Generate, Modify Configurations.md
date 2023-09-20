@@ -23,11 +23,9 @@ can create a central source from which we can import the values from. Variables.
 
 Some of these include: 
 1. Environment Variables
-2. Command Line Flags
+2. Command Line Flags  
 3. From a File
 4. Variable Defaults
-
-    terraform plan -var="instancetype=t2.small"
 
 
 
