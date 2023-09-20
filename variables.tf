@@ -3,10 +3,12 @@ variable "usernumber" {
   type = number
 }
 
+#default value
 variable "vpn_ip" {
   default = "116.50.30.20/32"
 } 
-#environment variables
+
+#default value
 variable "instancetype" {
    default = "t2.micro"
 }
