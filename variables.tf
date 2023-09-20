@@ -7,7 +7,8 @@ variable "instancetype" {
 }
 #command line flag 
 
-    terraform plan -var="instancetype=t2.small"
+
+      terraform plan -var="instancetype=t2.small"
 
 #running terraform plan with no default value will prompt you to input the value for that variable.
 variable "instancetype" {}
