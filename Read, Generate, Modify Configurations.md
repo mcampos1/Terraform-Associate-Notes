@@ -19,7 +19,15 @@ Output values defined in Project A can be referenced from code in Project B as w
 Project B can fetch the output values from the state file of Project A
 
 **Terraform Variables**
-can create a central source from which we can import the values from. Variables.tf
+can create a central source from which we can import the values from. Variables.tf is where you map the hardcode values for the variables. Variables in Terraform can be assigned values in multiple ways. 
+
+Some of these include: 
+1. Environment Variables
+2. Command Line Flags
+3. From a File
+4. Variable Defaults
+
+    terraform plan -var="instancetype=t2.small"
 
 
 
