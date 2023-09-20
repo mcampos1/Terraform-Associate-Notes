@@ -28,7 +28,23 @@ Some of these include:
 4. Variable Defaults
 
 **Environment Variables**
+
+Windows:
+
+        setx TF_VAR_instancetype m5.large 
+        echo %TF_VAR_instancetype% 
+        #will display value in a new terminal not in the same terminal where you set the environment variable
+
+Linux:
+
+        export TF_VAR_instancetype="t2.nano"
+        echo $TF_VAR_instancetype 
+        #dont need to open a new termianl to view the value of the variable
+
+
 **Command Line Flags**
+
+        terraform plan -var="instancetype=t2.small"
 
 **From a File**
 terraform.tfvars takes priority over default values specified in variables.tf 
@@ -40,7 +56,7 @@ Use the same naming convention "terraform.tfvars" or else you will need to speci
 variables.tf 
 
 variable instance_type{
-default="t2.micro"
+    default="t2.micro"
 }
 
 
