@@ -1,8 +1,14 @@
-variable "elb_name" {}
+variable "elb_name" {
+  type=string
+}
 
-variable "az" {}
+variable "az" {
+  type=list
+}
 
-variable "timeout" {}
+variable "timeout" {
+  type=number
+}
 
 #only number values will be accepted for the variable
 variable "usernumber" {
