@@ -79,6 +79,19 @@ If no type constraint is set then a value of any type is accepted.
       type = string
     }
 
+**Used case example**
+
+company makes you use your number only ID to provision instances
+
+variable.tf
+
+    variable "instance_name" {
+      type=number
+      }
+
+terraform.tfvars
+
+    instance_name="john-123"
 
 
 
