@@ -1,3 +1,5 @@
+variable "elb_name" {}
+
 #only number values will be accepted for the variable
 variable "usernumber" {
   type = number
