@@ -68,6 +68,7 @@ variables.tf
             default="t2.micro"
         }
 
+
 **Type Contraints** 
 
 The type argument in a variable block allows you to restrict the type of value that will be accepted as the value for a variable. 
