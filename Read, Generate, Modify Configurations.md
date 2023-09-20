@@ -150,12 +150,24 @@ This object has one attribute:
 
 count.index --The distinct index number (starting with 0) corresponding to this instance
 
+        #returns 5 loadblancers, with names: loadbalancer.(0-4)
         resource "aws_iam_user" "lb" {
-          name = "loadbalancer.${count.index}" #returns 5 loadblancers with different names
+          name = "loadbalancer.${count.index}" 
           count = 5
           path = "/system/"
         }
 
+        #iterates through list of names
+        variable "elb_names" {
+          type =list
+          default = ["dev-loadbalancer", "stage-loadbalancer", "prod-loadbalancer"]
+
+        resource "aws_iam_user" "lb" {
+          name = var.elb_names[count.index]
+          count = 5
+          path = "/system/"
+        }
+          
 
 
 
