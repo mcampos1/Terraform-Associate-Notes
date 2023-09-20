@@ -1,5 +1,9 @@
 variable "elb_name" {}
 
+variable "az" {}
+
+variable "timeout" {}
+
 #only number values will be accepted for the variable
 variable "usernumber" {
   type = number
