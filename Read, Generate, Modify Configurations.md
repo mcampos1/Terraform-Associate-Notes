@@ -81,6 +81,8 @@ If no type constraint is set then a value of any type is accepted.
 
 **Used case example**
 
+check ec2_datatype.tf
+
 company makes you use your number only ID to provision instances
 
 variable.tf
