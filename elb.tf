@@ -1,3 +1,8 @@
+provider "aws" {
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+}
 resource "aws_elb" "bar" {
   name               = var.elb_name
   availability_zones = var.az
