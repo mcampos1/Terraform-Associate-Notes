@@ -18,8 +18,13 @@ Output values make information about your infrastructure available on the comman
 Output values defined in Project A can be referenced from code in Project B as well. Even if they are in different Github repositories
 Project B can fetch the output values from the state file of Project A
 
-**Terraform Variables**
-can create a central source from which we can import the values from. Variables.tf is where you map the hardcode values for the variables. Variables in Terraform can be assigned values in multiple ways. 
+**Terraform Variables** 
+
+can create a central source from which we can import the values from.  
+
+Variables.tf is where you map the hardcode values for the variables. 
+
+Variables in Terraform can be assigned values in multiple ways. 
 
 Some of these include: 
 1. Environment Variables
@@ -31,14 +36,14 @@ Some of these include:
 
 Windows:
 
-        setx TF_VAR_instancetype m5.large 
-        echo %TF_VAR_instancetype% 
+                setx TF_VAR_instancetype m5.large 
+                echo %TF_VAR_instancetype% 
         #will display value in a new terminal not in the same terminal where you set the environment variable
 
 Linux:
 
-        export TF_VAR_instancetype="t2.nano"
-        echo $TF_VAR_instancetype 
+                export TF_VAR_instancetype="t2.nano"
+                echo $TF_VAR_instancetype 
         #dont need to open a new termianl to view the value of the variable
 
 
@@ -46,13 +51,16 @@ Linux:
 
         terraform plan -var="instancetype=t2.small"
 
-**From a File**
+**From a File** 
+
 terraform.tfvars takes priority over default values specified in variables.tf 
-Use the same naming convention "terraform.tfvars" or else you will need to specify the file name in the CLI.
+
+Use the same naming convention "terraform.tfvars" or else you will need to specify the file name in the CLI. 
 
     terraform plan -var-file="custom.tfvars"
 
 **Variable Defaults** 
+
 variables.tf 
 
 variable instance_type{
