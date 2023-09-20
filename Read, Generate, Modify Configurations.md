@@ -53,6 +53,7 @@ Linux:
 
 **From a File** 
 
+
 terraform.tfvars takes priority over default values specified in variables.tf 
 
 Use the same naming convention "terraform.tfvars" or else you will need to specify the file name in the CLI. 
@@ -63,9 +64,9 @@ Use the same naming convention "terraform.tfvars" or else you will need to speci
 
 variables.tf 
 
-variable instance_type{
-    default="t2.micro"
-}
+        variable instance_type{
+            default="t2.micro"
+        }
 
 
 
