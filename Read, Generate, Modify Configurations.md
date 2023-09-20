@@ -95,7 +95,12 @@ terraform.tfvars
 
     instance_name="john-123"
 
-
+| Type Keywords | Description |
+| - | - |
+| string | Sequence of unicode characters representing some text, like "hello" |
+| list | Sequential list of values identified by their position. Starts with 0. ["1","2","3"] |
+| map | group of values identified by named labels (key, value), {name ="Martin", age=25} |
+| number | 200 |
 
 
 
