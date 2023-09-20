@@ -73,7 +73,7 @@ variables.tf
 
 The type argument in a variable block allows you to restrict the type of value that will be accepted as the value for a variable. 
 
-If not type constraint is set then a value of any type is accepted. 
+If no type constraint is set then a value of any type is accepted. 
 
     variable "image_id"{
       type = string
