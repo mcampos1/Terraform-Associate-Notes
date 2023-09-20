@@ -27,7 +27,10 @@ Some of these include:
 3. From a File
 4. Variable Defaults
 
+terraform.tfvars takes priority over default values specified in variables.tf 
+Use the same naming convention "terraform.tfvars" or else you will need to specify the file name in the CLI.
 
+    terraform plan -var-file="custom.tfvars"
 
 
 
