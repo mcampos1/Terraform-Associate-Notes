@@ -108,25 +108,25 @@ terraform.tfvars
 
 for maps reference the variable and the key of the value you want:
 
-    instance_type = var.types["us-west-2"] #returns t2.nano
+        instance_type = var.types["us-west-2"] #returns t2.nano
     
-    variable "types" {
-      type=map
-      default = {
-        us-east-1 = "t2.micro"
-        us-west-2 = "t2.nano" 
-        ap-south-1 = "t2.small"
-      }
-    }
+        variable "types" {
+          type=map
+          default = {
+            us-east-1 = "t2.micro"
+            us-west-2 = "t2.nano" 
+            ap-south-1 = "t2.small"
+          }
+        }
 
 for list reference the variable and position number of the value you want
 
-  instance_type = var.list[0] #returns m5.large
-
-  variable "list" {
-    type = list
-    default = ["m5.large","m5.xlarge","t2.medium"]
-  }
+        instance_type = var.list[0] #returns m5.large
+      
+        variable "list" {
+          type = list
+          default = ["m5.large","m5.xlarge","t2.medium"]
+        }
 
 
 
