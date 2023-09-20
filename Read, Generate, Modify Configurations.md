@@ -141,8 +141,20 @@ With count parameter, we can simplify specify the count value and the resource c
           instance_type = "t2.micro"
           count = 5 #creates 5 instances
           }
-  
 
+**Count Index**
+
+In resource blocks where count is set, an additional count object is available in expressions, so you can modify the configurations of each instance.
+
+This object has one attribute:
+
+count.index --The distinct index number (starting with 0) corresponding to this instance
+
+        resource "aws_iam_user" "lb" {
+          name = "loadbalancer.${count.index}" #returns 5 loadblancers with different names
+          count = 5
+          path = "/system/"
+        }
 
 
 
