@@ -164,7 +164,7 @@ count.index --The distinct index number (starting with 0) corresponding to this 
 
         resource "aws_iam_user" "lb" {
           name = var.elb_names[count.index]
-          count = 5
+          count = 3
           path = "/system/"
         }
           
