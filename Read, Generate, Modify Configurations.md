@@ -172,8 +172,12 @@ count.index --The distinct index number (starting with 0) corresponding to this 
 
 condition ?(then) true_value :(else) false_value 
 
-Variable value specified in terraform.tfvars
+# Variable value specified in terraform.tfvars 
 
+istest = true
+
+Ex: count = var.istest == true ? 3 : 0 
+since istest is true, terraform will create 3 instances from that block else none are created
 
 
 
