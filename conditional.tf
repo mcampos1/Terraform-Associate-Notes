@@ -4,6 +4,8 @@ provider "aws" {
   secret_key = "my-secret-key"
 }
 
+variable "is-test" {} 
+
 resource "aws_instance" "dev" {
   ami = ami-04823729c75214919
   instance_type = "t2.micro"
