@@ -13,7 +13,7 @@ resource "aws_instance" "dev" {
   instance_type = "t2.micro"
   count = var.istest == true ? 1 : 0 
 #if var.istest is true then count=1 else count=0 and no ec2 instance will be created from that specific block
-  count = var.istest ==true ? 3 : 0 #if true creates 3 instances from this block
+  count = var.istest == true ? 3 : 0 #if true creates 3 instances from this block
 }
 
 resource "aws_instance" "prod" {
