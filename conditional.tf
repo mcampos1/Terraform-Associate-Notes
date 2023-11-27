@@ -1,3 +1,5 @@
+#condition ?(then) true_value :(else) false_value
+
 provider "aws" {
   region     = "us-west-2"
   access_key = "my-access-key"
