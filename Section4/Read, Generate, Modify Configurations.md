@@ -206,6 +206,26 @@ If overused they can also make a configuration hard to read by future maintainer
 
 Use local values only in moderation, in situations where a single value or result used in many places and that value is likely to be changed in the future
 
+# Terraform Functions
+
+The Terraform language includes a number of built-in functions that you can use to transform and combine values. 
+The general syntax for function calls is a function name followed by comma-separated arugements in parentheses:
+
+function(arguement1, arguement2)
+Ex: max(5,12,9)
+12
+
+The Terraform language does not support user-defined functions, and so only the functions built in to the language are available for use
+
+* Numeric
+* String
+* Collection
+* Encoding
+* Filesystem
+* Date and Time
+* Hash and Cryptio
+* IP Network
+* Type Conversion
 
 
 
