@@ -172,7 +172,7 @@ count.index --The distinct index number (starting with 0) corresponding to this 
 
 condition ?(then) true_value :(else) false_value 
 
-**Variable value specified in terraform.tfvars**
+**Variable Value specified in terraform.tfvars**
 
 istest = true
 
@@ -181,7 +181,17 @@ since istest is true, terraform will create 3 instances from that block else non
 
 # Local Values
 
+A local value assigns a name to an expression, allowing it to be used multiple times within a module without repeating it
 
+Ex: creates local value common_tags which can be attached to instance block
+tags = local.common_tags
+
+locals {
+  common_tags = {
+    Owner = "DevOps Team"
+    service = "backend"
+    }
+  }
 
 
 
