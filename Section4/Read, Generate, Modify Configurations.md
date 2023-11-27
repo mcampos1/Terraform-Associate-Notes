@@ -333,7 +333,24 @@ Retrieving desired output values
 2. Can get output values by looking at state file **terraform.tfstate** 
 3. use terraform output iam_arn
 
+# Terraform Settings 
+The special terraform configuration block type is used to configure some behaviors of Terraform itself, such as requiring a minimum Terraform version to apply your configuration.
 
+Terraform settings are gathered together into blocks
+
+The required version setting accepts a version constraint string, which specifies which versions of Terraform can be used with your configuration. 
+
+If the running version of Terraform doesn't match the constraints specified, Terraform will produce an error and exit without taking any further actions
+
+The required_providers blocks specifies all of the providers required by the current module, mapping each local provider name to a source address and a version constraint. 
+
+    terraform {
+      required_version = "> 0.12.0"
+      required_providers {
+        aws = "~> 2.0"
+        }
+      }
+    }
 
 
 
