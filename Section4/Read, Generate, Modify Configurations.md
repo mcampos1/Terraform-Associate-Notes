@@ -193,6 +193,19 @@ tags = local.common_tags
             }
           }
 
+Local Values can be used for multiple different use-cases like having a conditional expression 
+
+    locals{
+      name_prefix = '${var.name != "" ? var.name : var.default}
+    } #creates local value name_prefix that checks if var.name is empty if so points to var.name if not then uses var.default
+    #use concat function
+
+Local values can be helpful to avoid repeating the same values or expressions multiple times in a condition
+
+If overused they can also make a configuration hard to read by future maintainers by hiding the actual values used
+
+Use local values only in moderation, in situations where a single value or result used in many places and that value is likely to be changed in the future
+
 
 
 
