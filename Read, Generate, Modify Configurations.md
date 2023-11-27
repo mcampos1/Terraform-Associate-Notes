@@ -1,8 +1,8 @@
-**Typical Challenge**
+# Typical Challenge
 Resource 2 might be dependent on Resource 1
 For an elastic IP to be added to a security group, the elastic IP would have to be created first so that the ip address can be fetched and included as a rule in the security group. 
 
-**Basics of a Resource attributes**
+# Basics of a Resource attributes
 Each resource has its associated set of attributes 
 Attributes are the fields in a resource that hold the values that end up in state 
 Example: EC2 has arn, instance_state, private_dns .... 
@@ -13,12 +13,12 @@ security group, cidr_blocks= [${aws_eip.myeip.public_ip}/32]
 
 running terraform plan the resource that will fetch the specifc attribute of another resource will say "(known after apply)"
 
-**Output Values**
+# Output Values
 Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use. 
 Output values defined in Project A can be referenced from code in Project B as well. Even if they are in different Github repositories
 Project B can fetch the output values from the state file of Project A
 
-**Terraform Variables** 
+# Terraform Variables
 
 can create a central source from which we can import the values from.  
 
@@ -32,7 +32,7 @@ Some of these include:
 3. From a File
 4. Variable Defaults
 
-**Environment Variables**
+# Environment Variables
 
 Windows:
 
@@ -47,11 +47,11 @@ Linux:
         #dont need to open a new termianl to view the value of the variable
 
 
-**Command Line Flags**
+# Command Line Flags
 
         terraform plan -var="instancetype=t2.small"
 
-**From a File** 
+# From a File
 
 
 terraform.tfvars takes priority over default values specified in variables.tf 
@@ -60,7 +60,7 @@ Use the same naming convention "terraform.tfvars" or else you will need to speci
 
     terraform plan -var-file="custom.tfvars"
 
-**Variable Defaults** 
+# Variable Defaults
 
 variables.tf 
 
@@ -69,7 +69,7 @@ variables.tf
         }
 
 
-**Type Contraints** 
+# Type Contraints
 
 The type argument in a variable block allows you to restrict the type of value that will be accepted as the value for a variable. 
 
@@ -79,7 +79,7 @@ If no type constraint is set then a value of any type is accepted.
       type = string
     }
 
-**Used case example**
+# Used case example
 
 check ec2_datatype.tf
 
@@ -95,7 +95,7 @@ terraform.tfvars
 
     instance_name="john-123"
 
-**Overview of DataTypes**
+# Overview of DataTypes
 
 | Type Keywords | Description |
 | - | - |
@@ -104,7 +104,7 @@ terraform.tfvars
 | map | group of values identified by named labels (key, value), {name ="Martin", age=25} |
 | number | 200 |
 
-**Fetching Data from Maps and Lists in a Variable**
+# Fetching Data from Maps and Lists in a Variable
 
 for maps reference the variable and the key of the value you want:
 
@@ -128,7 +128,7 @@ for list reference the variable and position number of the value you want
           default = ["m5.large","m5.xlarge","t2.medium"]
         }
 
-**Overview of Count Parameter**
+# Overview of Count Parameter
 
 The count parameter on resources can simplify configurations and let you scale resources by simply incrementing a number.
 
@@ -142,7 +142,7 @@ With count parameter, we can simplify specify the count value and the resource c
           count = 5 #creates 5 instances
           }
 
-**Count Index**
+# Count Index
 
 In resource blocks where count is set, an additional count object is available in expressions, so you can modify the configurations of each instance.
 
@@ -168,17 +168,18 @@ count.index --The distinct index number (starting with 0) corresponding to this 
           path = "/system/"
         }
 
-**Conditional Expressions**
+# Conditional Expressions
 
 condition ?(then) true_value :(else) false_value 
 
-# Variable value specified in terraform.tfvars 
+**Variable value specified in terraform.tfvars**
 
 istest = true
 
 Ex: count = var.istest == true ? 3 : 0 
 since istest is true, terraform will create 3 instances from that block else none are created
 
+# Local Values
 
 
 
