@@ -170,8 +170,11 @@ count.index --The distinct index number (starting with 0) corresponding to this 
 
 **Conditional Expressions**
 
-Dependent on value of variable 
-Ex: is-test #true or false
+condition ?(then) true_value :(else) false_value 
+
+Variable value specified in terraform.tfvars
+
+
 
 
 
