@@ -186,12 +186,12 @@ A local value assigns a name to an expression, allowing it to be used multiple t
 Ex: creates local value common_tags which can be attached to instance block
 tags = local.common_tags
 
-locals {
-  common_tags = {
-    Owner = "DevOps Team"
-    service = "backend"
-    }
-  }
+        locals {
+          common_tags = {
+            Owner = "DevOps Team"
+            service = "backend"
+            }
+          }
 
 
 
