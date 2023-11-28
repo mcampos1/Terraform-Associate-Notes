@@ -383,14 +383,21 @@ ex: ec2.tf, rds.tf, sg.tf, vpc.tf
 # Zipmap Function
 Constructs a map from a list of keys and a corresponding list of values. 
 
-list of keys    +      list of values    --------->  
-| ----- |                  | ----- |                              | ---------------- |
-| pineapple |              | yellow |            zipmap           | pineapple=yellow |
-| orange |                   | orange |                           | orange=orange |
-| strawberry |               | red |                               |strawberry=red |
+list of keys
+[pineapple, orange, strawberry] 
 
++
 
+list of values
+[yellow, orange, red] 
 
+zip map
+
+| zipmap | | 
+| --- | --- |
+| pineapple=yellow |
+| orange=orange |
+| strawberry=red |
 
 
 
