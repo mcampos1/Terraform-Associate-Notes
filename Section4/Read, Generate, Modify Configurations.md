@@ -399,8 +399,7 @@ zip map
 | orange=orange |
 | strawberry=red |
 
-
-
+sample use-case, output which contains direct mapping of IAM names and ARNs
 
 
 
