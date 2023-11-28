@@ -362,13 +362,14 @@ separate configurations by resourse type to limit api call costs
 ex: ec2.tf, rds.tf, sg.tf, vpc.tf 
 
 1. You can prevent Terraform from querying the current state during operations like Terraform plan.
-       this can be achieved with:
+   this can be achieved with:
 
             terraform plan -refresh=false
 
-        "~ update in-place"
 
-       Everytime you run terraform plan, state is refreshed for every resource
+   "~ update in-place"
+
+   Everytime you run terraform plan, state is refreshed for every resource
 
  2. Specify the Target
    
