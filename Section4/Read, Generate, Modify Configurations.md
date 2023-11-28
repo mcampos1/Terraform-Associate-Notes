@@ -404,6 +404,52 @@ sample use-case, output which contains direct mapping of IAM names and ARNs
     terraform console
     terraform apply -auto-approve
 
+# Comments in Terraform
+
+begins a single line comment, ending at the end of the line. # 
+
+Beings a single line comment   // 
+
+Are start and end delimiters for a comment that might span over multiple lines /* */ 
+
+# Resource Behavior and Meta Arguments
+
+How Terraform applies a Configuration
+
+- Create Resources that exist in the configuration but are not associated with a real infrastructure object in the state.
+- Destroy resources that exist in the state but no longer exist in the configuration
+- Update in-place resources whose arguments have changed
+- Destroy and re-create resources whose arguments have changed but which cannot be updated in-place due to remote API limitations (ex. switching amis)
+
+Understanding the Limitations
+- example, someone applies manual changes through AWS console to resources, Terraform by default will remove those changes when you run Terraform apply
+
+Solution Using Meta Arguments
+Terraform allows us to include meta-argument within the resource block which allows some details of this standard resource behavior to be customized on a per-resource basis. 
+
+    resource "aws_instance" "myec2" {
+        ami = "ami-310943134"
+        instance_type = "t2.micro"
+
+        lifecycle {
+          ignore_changes = [tags]
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
