@@ -386,7 +386,7 @@ Constructs a map from a list of keys and a corresponding list of values.
 list of keys
 [pineapple, orange, strawberry] 
 
-+
+Combine
 
 list of values
 [yellow, orange, red] 
