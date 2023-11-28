@@ -362,6 +362,7 @@ separate configurations by resourse type to limit api call costs
 ex: ec2.tf, rds.tf, sg.tf, vpc.tf 
 
 1. Everytime you run terraform plan, state is refreshed for every resource.
+   
    You can prevent Terraform from querying the current state during operations like Terraform plan.
   
        terraform plan -refresh=false
@@ -370,14 +371,23 @@ ex: ec2.tf, rds.tf, sg.tf, vpc.tf
 
 2. Specify the Target  
    The -target=resource flag can be used to target a specific resource.
+   
    Generally used as a means to operate on isolated portions of very large configurations
 
         terraform plan -target=ec2
         terraform plan -refresh=false -target=aws_security_group.allow_ssh_conn
 
+   **Production Use**
+   Dont use -refresh=false and -target flags in production environments
 
+# Zipmap Function
+Constructs a map from a list of keys and a corresponding list of values. 
 
-
+list of keys    +      list of values    --------->  
+| ----- |                  | ----- |                              | ---------------- |
+| pineapple |              | yellow |            zipmap           | pineapple=yellow |
+| orange |                   | orange |                           | orange=orange |
+| strawberry |               | red |                               |strawberry=red |
 
 
 
