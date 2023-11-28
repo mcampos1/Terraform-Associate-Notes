@@ -353,6 +353,23 @@ The required_providers blocks specifies all of the providers required by the cur
     }
 
 
+# Large Infrastructure
+
+Be aware of API limits for a provider. 
+
+separate configurations by resourse type to limit api call costs 
+
+ex: ec2.tf, rds.tf, sg.tf, vpc.tf 
+
+1. You can prevent Terraform from querying the current state during operations like Terraform plan.
+
+this can be achieved with the -refresh=false 
+
+2. Specify the Target
+The -target=resource flag can be used to target a specific resource.
+Generally used as a means to operate on isolated portions of very large configurations
+
+   terraform plan -target=ec2
 
 
 
