@@ -432,9 +432,19 @@ Terraform allows us to include meta-argument within the resource block which all
         instance_type = "t2.micro"
 
         lifecycle {
-          ignore_changes = [tags]
+          ignore_changes = [tags] #ignores any manual changes done to resource tags
         }
     }
+
+| Meta-Arguement | Description |
+| --- | --- |
+| depends_on | Handle hideen resource or module dependencies that Terraform cannot automatically infer. |
+| count | Accepts a whole number, and creates that many instances of the resource |
+| for_each | Accepts a map or a set of strings, and creates an instance for each item in that map or set |
+| lifecycle | Allows modification of the resource lifecycle |
+| provider | Specifies which provider configuration to use for a resource, overriding Terraforms default behavior of selecting one based on the resource type name |
+
+    
 
 
 
