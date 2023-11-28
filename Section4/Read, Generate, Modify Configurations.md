@@ -401,6 +401,9 @@ zip map
 
 sample use-case, output which contains direct mapping of IAM names and ARNs
 
+    terraform console
+    terraform apply -auto-approve
+
 
 
 
