@@ -564,7 +564,11 @@ contrary to count, if a new element is added, it will not affect the other resou
             Name = each.value
             }
         }
+**each object**
+In blocks where for_each is set, an additional each object is available
 
+each.key = the map key or set member corresponding to this instance
+each.value = the map value corresponding to this instance
 
 
 
