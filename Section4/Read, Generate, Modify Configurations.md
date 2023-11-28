@@ -436,7 +436,7 @@ Terraform allows us to include meta-argument within the resource block which all
         }
     }
 
-| Meta-Arguement | Description |
+| Meta-Argument | Description |
 | --- | --- |
 | depends_on | Handle hideen resource or module dependencies that Terraform cannot automatically infer. |
 | count | Accepts a whole number, and creates that many instances of the resource |
@@ -444,22 +444,126 @@ Terraform allows us to include meta-argument within the resource block which all
 | lifecycle | Allows modification of the resource lifecycle |
 | provider | Specifies which provider configuration to use for a resource, overriding Terraforms default behavior of selecting one based on the resource type name |
 
-    
+# LifeCycle Meta-Argument 
+
+| Arguments | Description |
+| --- | --- |
+| create_before_destroy | New replacement object is created first, and the prior object is destroyed after the replacement is created |
+| prevent_destroy | Terraform to reject with an error any plan that would destroy the infrastructure object associated with the resource |
+| ignore_changes | Ignore certain changes to the live resource that does not match the configuration. |
+| replace_triggered_by | Replaces the resource when any of the referenced items change |
+
+# Create_Before_Destroy under LifeCycle Meta-Argument 
+
+#blue green, canary deployments
+By default, when Terraform must change a resource argument that cannot be updated in-place due to remote API limitations, Terraform will instead destroy the existing object and then create a new replacement object with the new configured arguments. 
+
+**Default Behavior**
+1. Destroy resource first
+2. Create new resource after
+
+**Create before Destroy**
+    resource "aws_instance" "myec2" {
+        ami = "ami-1747101348"
+        instance_type = "t2.micro"
+
+        lifecycle {
+            create_before_destroy = true
+        }
+    }
+
+1. Create updated resource first
+2. Destroy old resource after
+
+# Prevent_Destroy Arugment under LifeCycle Meta-Argument
+
+    resource "aws_instance" "myec2" {
+        ami = "ami-130473431413"
+        instance_type = "t2.micro"
+
+        tags = {
+            Name = "HelloEarth"
+        }
+        lifecycle {
+            prevent_destroy = true 
+        }
+    }
+
+- this can be used as a measure of safety against the accidental replacement of objects that may be costly to reproduce, such as database instances
+- Since this argument must be present in configuration for the protection to apply, note that this setting does not prevent the remote object from being destroyed if the resource block were removed from configuration entirely. 
+
+# Ignore Changes Argument under LifeCycle Meta-Argument
+
+In cases where settings of a remote object is modified by processes outside of Terraform, the Terraform would attempt to "fix" on the next run.
+
+In order to change this behavior and ignore the manually applied change, we can make use of ignore_changes argument under lifecycle
 
 
+    provider "aws" {
+        region = "us-east-1"
+    }
+    resource "aws_instance" "myec2" {
+        ami = "ami-134813412"
+        instance_type = "t2.micro"
 
+        tags = {
+            Name = "Hello Earth"
+        }
+        lifecycle {
+            ignore_changes = [tags,instance_type]
+            ignore_changes = all #all resources, no configuration changes, terraform or manual
+        }
+    }
 
+Instead of a list, the special keyword **all** may be used to instruct Terraform to ignore all attributes, which means that Terraform can create and destroy the remote object but will never propose updates to it
 
+# Challenges with Count Meta-Argument
+If the order of elements of index is changed, this can impact all of the other resources, adding an element to a list after resource is already configured and created 
 
+If your resources are almost identical, count is appropriate. 
 
+If distinctive values are needed in the arguments, usage of for_each is recommended.
 
+# Data Type -SET
 
+**Lists review**
+- lists are used to store multiple items in a single variable.
+- list items are ordered, changeable, and allow duplicate values.
+- list items are indexed, the first item has index[0], the second item has index[1] etc.
 
+SET is used to store multiple items in a single variable. 
+SET items are unordered and no duplicates allowed.
 
+**toset**
+function converts list to a SET, omits any duplicates
 
+    terraform console
+    toset(["a","b","c"]) 
+# for_each
+for_each makes use of map/set as an index value of the created resource.
 
+index_key: user-01 for name of user-01
 
+    resource "aws_iam_user" "iam" {
+        for_each = toset( ["user-01","user-02", "user-03"] )
+        #for-each = toset( ["user-0","user-01", "user-02", "user-03"] )
+        name     = each.key
+    }
 
+contrary to count, if a new element is added, it will not affect the other resources
+
+    resource "aws_instance" "myec2" {
+        ami = "ami-913473141"
+        for_each = {
+            key1 = "t2.micro"
+            key2 = "t2.medium"
+        }
+        instance_type = each.value
+        key_name = each.key
+        tags = {
+            Name = each.value
+            }
+        }
 
 
 
