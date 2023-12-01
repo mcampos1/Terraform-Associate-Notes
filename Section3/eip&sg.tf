@@ -24,4 +24,4 @@ resource "aws_security_group" "allow_tls" {
     protocol         = "tcp"
     cidr_blocks      = ["${aws_eip.myeip.public_ip}/32"]
 
-4#correct the format of the cidr_blocks to have a compatible format
+#correct the format of the cidr_blocks to have a compatible format
