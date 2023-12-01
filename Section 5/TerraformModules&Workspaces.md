@@ -64,3 +64,22 @@ example:
 
     from_port = local.app_port
 
+# Referencing Module Outputs
+
+In a parent module, outputs of child modules are available in expressions as module.
+
+    <MODULE NAME>.<OUTPUT NAME>
+
+
+    module "sgmodule" {
+      source = "../../modules/sg"
+    }
+    resource "aws_instance" "myec2" {
+      ami = ami-04823729c75214919
+      instance_type = "t2.micro"
+      vpc_security_group_ids = [module.sgmodule.sg_id] #integrates the newly created security group to the new ec2, by pointing to the output value in the resource file
+    }
+
+    terraform init
+    terraform plan
+    terraform apply -auto-approve
