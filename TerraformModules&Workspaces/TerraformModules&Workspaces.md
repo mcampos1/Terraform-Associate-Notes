@@ -126,3 +126,31 @@ Module verification is currently a manual process restricted to a small group of
 | Respository Description | The GitHub repository description is used to populate the short description of the module |
 | Standard module structure | The module must adhere to the standard module structure |
 | x.y.z tags for releases | The registry uses tags to identify module versions. Release tag names must be a semantic version, which can optionally be prefixed with a v. For example, v1.0.4 and 0.9.2 |
+
+**Standard Module Structure** 
+The standard module structure is a file and directory layout that is recommended for resuable modules distributed in separate repositories 
+
+Minimal module structure 
+
+* README.md
+* main.tf
+* variables.tf
+* outputs.tf
+
+Complete module structure 
+
+* README.md
+* main.tf
+* variables.tf
+* outputs.tf
+* modules/
+    * nestedA/
+        * README.md
+        * main.tf
+        * variables.tf
+        * outputs.tf
+    * nestedB/
+* examples/
+    * exampleA/
+        * main.tf
+    * exampleB/
