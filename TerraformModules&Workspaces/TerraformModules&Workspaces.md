@@ -154,3 +154,46 @@ Complete module structure
     * exampleA/
         * main.tf
     * exampleB/
+
+# Terraform Workspace
+
+Terraform allows us to have multiple workspaces, with each of the workspaces we can have different set of environment variables associated 
+
+Each workspace can have a different set of environment variables 
+
+    terraform workspace 
+    terraform workspace show #display current workspace
+    terraform workspace list 
+    terraform workspace select dev #switch to dev workspace
+    terraform workspace -h 
+    terraform workspace delete
+    terraform workspace new 
+
+# Implementing Terraform Workspace
+
+Creating workspaces with different configurations for each workspace
+
+    terraform workspace new dev
+    terraform workspace new prod
+
+Setup map variable and lookup function with terraform workspace value as key to select instance_type
+Check workspace1.tf
+
+    resource "aws_instance" "myec2" {
+        ami = ami-04823729c75214919
+        instance_type = lookup(var.instance_type,terraform.workspace) 
+    }
+
+    variable "instance_type" {
+        type = "map"
+        default = {
+            default = "t2.nano"
+            dev = "t2.micro"
+            prod = "t2.large"
+        }
+    }
+
+**terraform.tfstate.d**
+This directory contains separate state files for each workspace accordingly
+
+    terraform.tfstate
