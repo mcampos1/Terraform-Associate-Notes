@@ -8,3 +8,6 @@ resource "aws_instance" "myec2" {
     instance_type = "t2.micro"
     vpc_security_group_ids = [module.sgmodule.sg_id] 
 }
+output "sg_id" {
+    value = aws_security_group.ec2-sg.id #put in module file to see output in CLI
+  }

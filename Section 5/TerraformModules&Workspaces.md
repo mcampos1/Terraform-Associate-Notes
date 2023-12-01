@@ -68,7 +68,8 @@ example:
 
 In a parent module, outputs of child modules are available in expressions as module.
 
-    <MODULE NAME>.<OUTPUT NAME>
+    "module/<MODULE NAME>.<OUTPUT NAME>"
+    [module.sgmodule.sg_id]
 
 
     module "sgmodule" {
@@ -83,3 +84,45 @@ In a parent module, outputs of child modules are available in expressions as mod
     terraform init
     terraform plan
     terraform apply -auto-approve
+    terraform destroy -auto-approve
+
+# Terraform Registry
+
+[Terraform-Registry](https://registry.terraform.io/) 
+
+Is a repository of modules written by the terraform community. 
+The registry can help you get started with Terraform more quickly. 
+
+**Verified Modules in Terraform Registry** 
+Within Terraform Registry, you can find verified modules that are maintained by various third party vendors. These modules are available for various resources like AWS VPC, RDS, ELB, and others. 
+
+Verified modules are reviewed by HashiCorp and actively maintained by contributors to stay up-to-date and compatible with both Terraform and their respective providers. 
+
+The blue verification badge appears next to modules that are verified.
+
+Module verification is currently a manual process restricted to a small group of trusted HashiCorp partners. 
+
+[Module-sourcecode](https://github.com/terraform-aws-modules/terraform-aws-ec2-instance/tree/v5.5.0/examples/complete)
+
+    module "ec2cluster" {
+    source = "terraform-aws-modules/ec2-instance/aws"
+    version = "~> 2.0"
+    name = "my-cluster"
+    instance_count = 1
+    ami = "ami-1341324"
+    instance_type = "t2.micro"
+    subnet_id = "ami-141253534"
+    tags = {
+        Terraform = "true"
+        Environment = "dev"
+        }
+    }  
+
+# Requirements for Publishing Modules in Terraform Registry
+| Requirement | Description |
+| --- | --- |
+| Github | The module must be on GitHub and must be a public repo. This is only a requirement for the public registry |
+| Named | Module repositories must the three-part name format terraform-<PROVIDER>=<NAME> |
+| Respository Description | The GitHub repository description is used to populate the short description of the module |
+| Standard module structure | The module must adhere to the standard module structure |
+| x.y.z tags for releases | The registry uses tags to identify module versions. Release tag names must be a semantic version, which can optionally be prefixed with a v. For example, v1.0.4 and 0.9.2 |

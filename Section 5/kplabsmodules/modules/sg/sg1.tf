@@ -16,5 +16,5 @@ resource "aws_security_group" "ec2-sg" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
   output "sg_id" {
-    value = aws_security_group.ec2-sg.id
+    value = aws_security_group.ec2-sg.id #will not appear in CLI, put in module file to see in CLI
   }
