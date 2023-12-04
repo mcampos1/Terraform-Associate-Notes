@@ -193,7 +193,21 @@ The terraform_remote_state data sources retrieves the root module output values 
 
 check security-project/sg.tf,security-project/remote-state.tf, network-project/eip.tf, and network-project/backend.tf
 
-# Implementing Remote State Connections 
+# Terraform Import available for Terraform v1.5
+
+check terraform version
+
+    terrform version
+
+Manually created resources can be imported into Terraform
+
+Terraform Import can automatically create the terraform configuration files for the resoures you want to import. 
+
+First create configuration file to import exisiting resource: import.tf
+
+then 
+
+    terraform plan -generate-config-out=mysg.tf
 
 
 
