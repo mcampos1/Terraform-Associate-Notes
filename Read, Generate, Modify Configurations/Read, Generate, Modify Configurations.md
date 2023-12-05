@@ -32,6 +32,13 @@ Some of these include:
 3. From a File
 4. Variable Defaults
 
+# Variable definition Precendence
+1. any -var or -var-file in the CLI
+2. *.auto.tfvars or *.auto.tfvars.json files
+3. terraform.tfvars.json
+4. terraform.tfvars
+5. environment variables
+
 # Environment Variables
 
 Windows:
