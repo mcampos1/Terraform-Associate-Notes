@@ -209,6 +209,10 @@ then
 
     terraform plan -generate-config-out=mysg.tf
 
+Create configuration file then import data of the resource to the state file and link it 
+
+    terraform import aws_instance.myec2 i-134132412432
+
 
 
 
