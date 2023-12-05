@@ -30,7 +30,7 @@ Make sure your terminal is in the same location as youre terraform file
         terraform plan #displays what terraform is planning on creating
         terraform apply #creates the resources 
 
-**Provider Plugings**  
+**Provider Plugins**  
 
 A provider is a plugin that lets Terraform manage an external API
 
@@ -59,7 +59,7 @@ Resource type and Name together server as an identifier for a given resouce and 
             }
 
             
-**Terraform Destory ** 
+**Terraform Destory** 
 
 Destroy resouces when you no longer need them to save on costs  
 
@@ -72,7 +72,7 @@ Destroy resouces when you no longer need them to save on costs
 
 As long as code to create resource is still present in the terraform file, it will recreate the resource.
 
-**Multiple ways to destory resources:**
+**Multiple ways to destroy resources:**
 
 * commenting out resource code from terraform file and then terraform plan, terraform apply  
 
