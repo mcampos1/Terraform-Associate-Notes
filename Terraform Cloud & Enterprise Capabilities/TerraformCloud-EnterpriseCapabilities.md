@@ -6,6 +6,9 @@ Terraform Cloud manages Terraform runs in a consistent and reliable environment 
 * Free
 * Team & Governance
 * Business
+     * Audit Logging
+     * Clustering functionality
+     * Private Network Connectivity
 
 Create Workspace
 * Version Control Workflow
